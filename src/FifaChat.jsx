@@ -195,7 +195,7 @@ export default function FifaChat() {
     try {
       const context = buildContext(footballData);
       const systemPrompt = `You are ScoutAI, a FIFA World Cup 2026 expert assistant with live tournament data. Answer questions clearly and concisely using the data below. Use specific stats and be insightful. Today is June 2026.\n\n${context}`;
-      const response = await fetch("https://api.anthropic.com/v1/messages", {
+      const response = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
